@@ -13,8 +13,8 @@ router.get('/api/extension/cowi_test/image', function (req, response) {
     var key = req.query.k, q;
     console.log(key);
 
-    //wkhtmltopdf.command = "/root/wkhtmltox/bin/wkhtmltoimage";
-    wkhtmltopdf.command = "/home/mh/Downloads/wkhtmltox/bin/wkhtmltoimage";
+    wkhtmltopdf.command = "/root/wkhtmltox/bin/wkhtmltoimage";
+    //wkhtmltopdf.command = "/home/mh/Downloads/wkhtmltox/bin/wkhtmltoimage";
 
     fs.readFile(__dirname + "/../../../public/tmp/print/json/" + key, 'utf8', function (err, data) {
 
