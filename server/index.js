@@ -29,7 +29,7 @@ router.get('/api/extension/alleroed_lp/image', function (req, response) {
 
         q = JSON.parse(data);
 
-        var url = '/app/' + q.db + '/' + q.schema + '/' + (q.queryString ? q.queryString : "?") + '&tmpl=' + q.tmpl + '.tmpl&l=' + q.legend + '&h=' + q.header + '&px=' + q.px + '&py=' + q.py + '&td=' + q.dateTime+ '&d=' + q.date + '&k=' + key + '&t=' + q.title + '&c=' + q.comment + (q.config ? "&config=" + q.config : "") + q.anchor;
+        var url = '/app/' + q.db + '/' + q.schema + '/' + (q.queryString !=="" ? q.queryString : "?") + '&tmpl=' + q.tmpl + '.tmpl&l=' + q.legend + '&h=' + q.header + '&px=' + q.px + '&py=' + q.py + '&td=' + q.dateTime+ '&d=' + q.date + '&k=' + key + '&t=' + q.title + '&c=' + q.comment + q.anchor;
 
         console.log("http://127.0.0.1:3000" + url);
 
