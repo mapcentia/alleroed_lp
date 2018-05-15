@@ -3,6 +3,7 @@ var utils;
 var print;
 var backboneEvents;
 var layers;
+var anchor;
 
 var urlVars = require('./../../../browser/modules/urlparser').urlVars;
 
@@ -15,6 +16,7 @@ module.exports = {
         utils = o.utils;
         print = o.print;
         layers = o.layers;
+        anchor = o.anchor;
         backboneEvents = o.backboneEvents;
 
     },
@@ -27,8 +29,9 @@ module.exports = {
             if (!e.success) {
                 alert("Noget gik galt!")
             } else {
-                console.log(e.key);
-                window.parent.postMessage({"key": e.key}, '*');
+                let obj = {"key": e.key, "hash": anchor.getAnchor()};
+                console.log(obj);
+                window.parent.postMessage(obj, '*');
             }
         });
 
