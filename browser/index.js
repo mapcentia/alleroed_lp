@@ -23,5 +23,14 @@ module.exports = {
 
         layers.setUri("/extensions/qgisfilter/api/wms/" + urlVars.planid);
 
+        print.setCallBack(function (e) {
+            if (!e.success) {
+                alert("Noget gik galt!")
+            } else {
+                console.log(e.key);
+                window.parent.postMessage({"key": e.key}, '*');
+            }
+        });
+
     }
 };
