@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var http = require('http');
 var fs = require('fs');
-var wkhtmltopdf = require('wkhtmltopdf');
+
 
 /**
  *
@@ -13,6 +13,7 @@ router.get('/api/extension/alleroed_lp/image', function (req, response) {
     var key = req.query.k, q;
     console.log(key);
 
+    var wkhtmltopdf = require('wkhtmltopdf');
     wkhtmltopdf.command = "/root/wkhtmltox/bin/wkhtmltoimage";
     //wkhtmltopdf.command = "/home/mh/Downloads/wkhtmltox/bin/wkhtmltoimage";
 
